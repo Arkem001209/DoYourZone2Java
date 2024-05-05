@@ -21,7 +21,11 @@ public class z2app {
             System.out.println(">> [5] Exit game");
 
             select = input.nextInt();
-            if (select == 7){
+            if (select == 5){
+                continue;
+            }
+            else if (select == 1){
+                System.out.println("Your current Max Heart rate is " + athlete.getMaxHR() + ". What would you like to update it to?");
                 continue;
             }
         } while (select != 5);
@@ -30,9 +34,9 @@ public class z2app {
     public static void zone2Menu(String username){
         System.out.println(
                 "-----------------------------------------------------------------------------------------------" +
-                        "\nWelcome back " + username + "! Its time to grow that aerobic base. I hope youve been keeping to"+
+                        "\nWelcome back " + username + "! Its time to grow that aerobic base. I hope you've been keeping to"+
                         "\nyour zone 2 heart rate zones. See below your most up to date statistics:"+
-                        "\n DEVELOPER TO DO: Add to this instruction list when server isset up"+
+                        "\n DEVELOPER TO DO: Add to this instruction list when server is set up"+
                         "\n"+
                         "\n"+
                         "\n What would you like to do now?"+
