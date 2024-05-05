@@ -29,4 +29,44 @@ public class z2mechanics {
     public void changeUpperZone2(int upperChange){
         upperZone2Range += upperChange;
     }
+    //getter methods
+    public String getUsername(){
+        return username;
+    }
+    public int getMaxHR(){
+        return maxHR;
+    }
+    public int getRestinghr(){
+        return restinghr;
+    }
+    public int getLowerZone2Range(){
+        return lowerZone2Range;
+    }
+    public int getUpperZone2Range(){
+        return upperZone2Range;
+    }
+    public int getTotalExperiencePoints(){
+        return totalExperiencePoints;
+    }
+
+    //setter methods
+    public void setUsername(String username){
+        this.username = username;
+    }
+    public void setMaxHR(int maxHR){
+        this.maxHR = maxHR;
+    }
+    public void setRestinghr(int restinghr){
+        this.restinghr = restinghr;
+    }
+    public void setLowerZone2Range(int lowerZone2Range){
+        this.lowerZone2Range = lowerZone2Range;
+    }
+    public void setUpperZone2Range(int upperZone2Range){
+        this.upperZone2Range = upperZone2Range;
+    }
+
+    public void setTotalExperiencePoints(int totalExperiencePoints) {
+        this.totalExperiencePoints = totalExperiencePoints;
+    }
 }
