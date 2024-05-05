@@ -12,7 +12,19 @@ public class z2app {
 
         //User instructions
         zone2Menu(username);
-        
+
+        do {
+            System.out.println(">> [1] Update Max Heart Rate");
+            System.out.println(">> [2] Update Resting Heart Rate");
+            System.out.println(">> [3] Update Zone 2 Heart Rate Zone");
+            System.out.println(">> [4] Upload metrics for a workout");
+            System.out.println(">> [5] Exit game");
+
+            select = input.nextInt();
+            if (select == 7){
+                continue;
+            }
+        } while (select != 5);
 
     }
     public static void zone2Menu(String username){
