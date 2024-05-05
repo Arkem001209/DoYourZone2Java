@@ -14,5 +14,19 @@ public class z2mechanics {
         upperZone2Range = 155;
         totalExperiencePoints = 1;
     }
-    
+    public void changeExperience(int xp){
+        totalExperiencePoints += xp;
+    }
+    public void changeMaxHR(int max){
+        maxHR += max;
+    }
+    public void changeRestinghr(int resting){
+        restinghr += resting;
+    }
+    public void changeLowerZone2(int lowerChange){
+        lowerZone2Range += lowerChange;
+    }
+    public void changeUpperZone2(int upperChange){
+        upperZone2Range += upperChange;
+    }
 }
