@@ -9,5 +9,23 @@ public class z2app {
         String username = input.nextLine();
 
         z2mechanics athlete = new z2mechanics(username);
+
+        //User instructions
+        zone2Menu(username);
+        
+
+    }
+    public static void zone2Menu(String username){
+        System.out.println(
+                "-----------------------------------------------------------------------------------------------" +
+                        "\nWelcome back " + username + "! Its time to grow that aerobic base. I hope youve been keeping to"+
+                        "\nyour zone 2 heart rate zones. See below your most up to date statistics:"+
+                        "\n DEVELOPER TO DO: Add to this instruction list when server isset up"+
+                        "\n"+
+                        "\n"+
+                        "\n What would you like to do now?"+
+                        "\n-----------------------------------------------------------------------------------------------"
+        );
     }
 }
+
