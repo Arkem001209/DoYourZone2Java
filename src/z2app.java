@@ -39,6 +39,16 @@ public class z2app {
                 System.out.println("Your resting heart rate is updated");
                 showCurrentStats(athlete);
             }
+            else if (select == 3) {
+                System.out.println("Your current zone 2 heart rate range is: " + athlete.getLowerZone2Range() + " - " + athlete.getUpperZone2Range() + ". First enter your new lower zone two range number.");
+                int templowerband = input.nextInt();
+                athlete.setLowerZone2Range(templowerband);
+                System.out.println("New lower band set. Now set the upper band.");
+                int tempupperband = input.nextInt();
+                athlete.setUpperZone2Range(tempupperband);
+                System.out.println("new zone 2 range set! Good luck with your training.");
+                showCurrentStats(athlete);
+            }
         } while (select != 5);
 
     }
