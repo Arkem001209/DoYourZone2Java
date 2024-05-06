@@ -57,7 +57,7 @@ public class z2app {
                     athlete.setTotalExperiencePoints(athlete.getTotalExperiencePoints() + 10);
                 }
                 else {
-                    System.out.println("Kill that ego! Overdoing it isnt going to make you faster. Remember that for your next zone 2 workout.");
+                    System.out.println("Kill that ego! Overdoing it isn't going to make you faster. Remember that for your next zone 2 workout.");
                 }
                 showCurrentStats(athlete);
             }
