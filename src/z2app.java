@@ -22,11 +22,15 @@ public class z2app {
 
             select = input.nextInt();
             if (select == 5){
+                System.out.println("Goodbye");
                 continue;
             }
             else if (select == 1){
                 System.out.println("Your current Max Heart rate is " + athlete.getMaxHR() + ". What would you like to update it to?");
-                continue;
+                int tempMaxHR = input.nextInt();
+                athlete.setMaxHR(tempMaxHR);
+                System.out.println("Max Heart rate is updated");
+                showCurrentStats(athlete);
             }
         } while (select != 5);
 
@@ -42,6 +46,14 @@ public class z2app {
                         "\n What would you like to do now?"+
                         "\n-----------------------------------------------------------------------------------------------"
         );
+    }
+
+    private static void showCurrentStats(z2mechanics username) {
+        System.out.println(">> Current Max Heart Rate: " + username.getMaxHR());
+        System.out.println(">> Current Resting Heart Rate: " + username.getRestinghr());
+        System.out.println(">> Current lower Z2 Heart Rate Range: " + username.getLowerZone2Range());
+        System.out.println(">> Current upper Z2 Heart Rate Range: " + username.getUpperZone2Range());
+        System.out.println(">> Current XP: " + username.getTotalExperiencePoints());
     }
 }
 
