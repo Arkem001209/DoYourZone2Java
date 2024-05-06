@@ -49,6 +49,18 @@ public class z2app {
                 System.out.println("new zone 2 range set! Good luck with your training.");
                 showCurrentStats(athlete);
             }
+            else if (select == 4) {
+                System.out.println("Please enter the average Heart rate of your actvity");
+                int tempactivityhr = input.nextInt();
+                if (tempactivityhr >= athlete.getLowerZone2Range() && tempactivityhr <= athlete.getUpperZone2Range()) {
+                    System.out.println("Well done for keeping it zone 2! you have gained experience");
+                    athlete.setTotalExperiencePoints(athlete.getTotalExperiencePoints() + 10);
+                }
+                else {
+                    System.out.println("Kill that ego! Overdoing it isnt going to make you faster. Remember that for your next zone 2 workout.");
+                }
+                showCurrentStats(athlete);
+            }
         } while (select != 5);
 
     }
