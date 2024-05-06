@@ -32,14 +32,21 @@ public class z2app {
                 System.out.println("Max Heart rate is updated");
                 showCurrentStats(athlete);
             }
+            else if (select == 2) {
+                System.out.println("Your current Resting Heart Rate is " + athlete.getRestinghr() + ". What would you like to update it to?");
+                int temprestingHR = input.nextInt();
+                athlete.setRestinghr(temprestingHR);
+                System.out.println("Your resting heart rate is updated");
+                showCurrentStats(athlete);
+            }
         } while (select != 5);
 
     }
     public static void zone2Menu(String username){
         System.out.println(
                 "-----------------------------------------------------------------------------------------------" +
-                        "\nWelcome back " + username + "! Its time to grow that aerobic base. I hope you've been keeping to"+
-                        "\nyour zone 2 heart rate zones. See below your most up to date statistics:"+
+                        "\nWelcome back " + username + "! Its time to grow that aerobic base. I hope you've been keeping"+
+                        "\nto your zone 2 heart rate zones. See below your most up to date statistics:"+
                         "\n DEVELOPER TO DO: Add to this instruction list when server is set up"+
                         "\n"+
                         "\n"+
