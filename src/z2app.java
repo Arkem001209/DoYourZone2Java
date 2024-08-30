@@ -49,6 +49,7 @@ public class z2app {
                 System.out.println("new zone 2 range set! Good luck with your training.");
                 showCurrentStats(athlete);
             }
+
             else if (select == 4) {
                 System.out.println("Please enter the average Heart rate of your actvity");
                 int tempactivityhr = input.nextInt();
@@ -59,6 +60,9 @@ public class z2app {
                         athlete.levelUp();
                         System.out.println("Level up! Keep up the good work, you are now level " + athlete.getCurrentLevel());
                         athlete.setTotalExperiencePoints(1);
+                    }
+                    else{
+                        System.out.println(">> Current Experience Points: " + athlete.getTotalExperiencePoints() + "/100");
                     }
                 }
                 else {
@@ -88,6 +92,7 @@ public class z2app {
         System.out.println(">> Current lower Z2 Heart Rate Range: " + username.getLowerZone2Range());
         System.out.println(">> Current upper Z2 Heart Rate Range: " + username.getUpperZone2Range());
         System.out.println(">> Current XP: " + username.getTotalExperiencePoints());
+        System.out.println(">> Current Level: " + username.getCurrentLevel());
     }
 }
 
