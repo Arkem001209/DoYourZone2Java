@@ -55,6 +55,11 @@ public class z2app {
                 if (tempactivityhr >= athlete.getLowerZone2Range() && tempactivityhr <= athlete.getUpperZone2Range()) {
                     System.out.println("Well done for keeping it zone 2! you have gained experience");
                     athlete.setTotalExperiencePoints(athlete.getTotalExperiencePoints() + 10);
+                    if (athlete.getTotalExperiencePoints() >= 100){
+                        athlete.levelUp();
+                        System.out.println("Level up! Keep up the good work, you are now level " + athlete.getCurrentLevel());
+                        athlete.setTotalExperiencePoints(1);
+                    }
                 }
                 else {
                     System.out.println("Kill that ego! Overdoing it isn't going to make you faster. Remember that for your next zone 2 workout.");

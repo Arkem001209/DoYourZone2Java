@@ -31,7 +31,7 @@ public class z2mechanics {
     public void changeUpperZone2(int upperChange){
         upperZone2Range += upperChange;
     }
-    public void levelUp(int level){
+    public void levelUp(){
         currentLevel ++;
     }
     //getter methods
