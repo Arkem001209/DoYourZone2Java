@@ -6,6 +6,7 @@ public class z2mechanics {
     private int lowerZone2Range;
     private int upperZone2Range;
     private int totalExperiencePoints;
+    private int currentLevel;
     public z2mechanics(String Jim){
         username = "Jim";
         maxHR = 200;
@@ -13,6 +14,7 @@ public class z2mechanics {
         lowerZone2Range = 120;
         upperZone2Range = 155;
         totalExperiencePoints = 1;
+        currentLevel = 1;
     }
     public void changeExperience(int xp){
         totalExperiencePoints += xp;
@@ -28,6 +30,9 @@ public class z2mechanics {
     }
     public void changeUpperZone2(int upperChange){
         upperZone2Range += upperChange;
+    }
+    public void levelUp(int level){
+        currentLevel ++;
     }
     //getter methods
     public String getUsername(){
@@ -47,6 +52,9 @@ public class z2mechanics {
     }
     public int getTotalExperiencePoints(){
         return totalExperiencePoints;
+    }
+    public int getCurrentLevel(){
+        return currentLevel;
     }
 
     //setter methods
