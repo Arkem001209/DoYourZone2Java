@@ -56,6 +56,9 @@ public class z2mechanics {
     public int getCurrentLevel(){
         return currentLevel;
     }
+    public int getCalculatedLevel(int totalXP){
+        return totalXP/100;
+    }
 
     //setter methods
     public void setUsername(String username){

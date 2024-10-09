@@ -51,18 +51,18 @@ public class z2app {
             }
 
             else if (select == 4) {
-                System.out.println("Please enter the average Heart rate of your actvity");
+                System.out.println("Please enter the average Heart rate of your activity");
                 int tempactivityhr = input.nextInt();
                 if (tempactivityhr >= athlete.getLowerZone2Range() && tempactivityhr <= athlete.getUpperZone2Range()) {
                     System.out.println("Well done for keeping it zone 2! you have gained experience");
                     athlete.setTotalExperiencePoints(athlete.getTotalExperiencePoints() + 10);
-                    if (athlete.getTotalExperiencePoints() >= 100){
+                    if (athlete.getCalculatedLevel(athlete.getTotalExperiencePoints()) >= athlete.getCurrentLevel()){
                         athlete.levelUp();
                         System.out.println("Level up! Keep up the good work, you are now level " + athlete.getCurrentLevel());
-                        athlete.setTotalExperiencePoints(1);
+                        //athlete.setTotalExperiencePoints(1);
                     }
                     else{
-                        System.out.println(">> Current Experience Points: " + athlete.getTotalExperiencePoints() + "/100");
+                        System.out.println(">> Current Experience Points: " + athlete.getTotalExperiencePoints());
                     }
                 }
                 else {
