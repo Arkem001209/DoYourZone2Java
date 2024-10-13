@@ -7,6 +7,7 @@ public class z2mechanics {
     private int upperZone2Range;
     private int totalExperiencePoints;
     private int currentLevel;
+
     public z2mechanics(String Jim){
         username = "Jim";
         maxHR = 200;
@@ -81,3 +82,4 @@ public class z2mechanics {
         this.totalExperiencePoints = totalExperiencePoints;
     }
 }
+
