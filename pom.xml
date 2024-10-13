@@ -4,6 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+
     <groupId>groupId</groupId>
     <artifactId>DoYourZone2Java</artifactId>
     <version>1.0-SNAPSHOT</version>
@@ -13,11 +14,13 @@
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+    <dependencies>
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>9.0.0</version> <!-- Check the latest version -->
+        </dependency>
+    </dependencies>
 
-    <dependency>
-        <groupId>mysql</groupId>
-        <artifactId>mysql-connector-java</artifactId>
-        <version>9.0.0</version> <!-- Check the latest version -->
-    </dependency>
-    
+
 </project>
