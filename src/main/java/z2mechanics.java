@@ -1,3 +1,7 @@
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
 public class z2mechanics {
     //main parameters for user and fitness level
     private String username;
@@ -80,6 +84,55 @@ public class z2mechanics {
 
     public void setTotalExperiencePoints(int totalExperiencePoints) {
         this.totalExperiencePoints = totalExperiencePoints;
+    }
+
+    public void createUser(String user_name, String new_passwordHash) {
+        Connection conn = null;
+        PreparedStatement insertUserStmt = null;
+        PreparedStatement insertPasswordStmt = null;
+
+        try {
+            conn = DatabaseConnection.getConnection();
+            conn .setAutoCommit(false);
+
+            //query for usernames
+            String userSQL = "INSERT INTO users (user_name) VALUES (?)";
+            insertUserStmt = conn.prepareStatement(userSQL, PreparedStatement.RETURN_GENERATED_KEYS);
+            insertUserStmt.setString(1, user_name);
+
+            insertUserStmt.executeUpdate();
+
+            var generatedKeys = insertUserStmt.getGeneratedKeys();
+            if (generatedKeys.next()) {
+                int userId = generatedKeys.getInt(1);
+
+                String passwordSQL = "INSERT INTO user_passwords (user_id, user_password) (?, ?)";
+                insertPasswordStmt = conn.prepareStatement(passwordSQL);
+                insertPasswordStmt.setInt(1, userId);
+                insertPasswordStmt.setString(2, new_passwordHash);
+
+                insertPasswordStmt.executeUpdate();
+
+                conn.commit();
+            }
+        } catch (SQLException e) {
+            if (conn != null) {
+                try {
+                    conn.rollback(); // Roll back transaction in case of error
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                }
+            }
+            e.printStackTrace();
+        } finally {
+            try {
+                if (insertUserStmt != null) insertUserStmt.close();
+                if (insertPasswordStmt != null) insertPasswordStmt.close();
+                if (conn != null) conn.close();
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+        }
     }
 }
 
